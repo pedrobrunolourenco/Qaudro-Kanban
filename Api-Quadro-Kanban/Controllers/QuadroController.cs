@@ -9,6 +9,7 @@ namespace Api_Quadro_Kanban.Controllers
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1")]
+    [Produces("application/json")]
     [Authorize()]
     public class QuadroController : Controller
     {
@@ -19,7 +20,6 @@ namespace Api_Quadro_Kanban.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         [Route("Obter-Quadros")]
         public IActionResult ObterQuadros()
         {
@@ -28,7 +28,6 @@ namespace Api_Quadro_Kanban.Controllers
 
         [HttpPost]
         [Route("Adicionar-Quadro")]
-        [AllowAnonymous]
         public IActionResult AdicionarQuadro([FromBody] QuadroDTO model)
         {
             return Ok(_appQuadro.IncluirQuadro(model));
@@ -36,7 +35,6 @@ namespace Api_Quadro_Kanban.Controllers
 
         [HttpPut]
         [Route("Alterar-Quadro")]
-        [AllowAnonymous]
         public IActionResult AlterarQuadro(Guid id, [FromBody] QuadroDTO model)
         {
             var quadro = _appQuadro.ObterPorId(id);
@@ -51,7 +49,6 @@ namespace Api_Quadro_Kanban.Controllers
 
         [HttpDelete]
         [Route("Excluir-Quadro")]
-        [AllowAnonymous]
         public IActionResult ExcluirQuadro(Guid id)
         {
             var quadro = _appQuadro.ObterPorId(id);

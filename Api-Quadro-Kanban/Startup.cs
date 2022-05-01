@@ -33,7 +33,6 @@ namespace Api_Quadro_Kanban
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.RegisterServices();
             services.AddDbContext<ContextEF>(opt => opt.UseInMemoryDatabase());
-            // services.AddDbContext<ContextEF>(opt => opt.U);
 
         }
 
@@ -42,10 +41,9 @@ namespace Api_Quadro_Kanban
         {
             SwaggerStartup.AplicacaoSwagger(app);
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
