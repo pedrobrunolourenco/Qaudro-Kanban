@@ -13,8 +13,8 @@
   }
 
 4) Caso não se queira trabalhar com o Secrets.Json, a mesma estrutura de acesso está disponível em AppSettings.Json,
-caso o Secrets.Json não for definido, o sistema irá levar em conta, o login e senha definido no grupo ACESSO de AppSettings.Json ou
-em Secrets.Json, sendo que Secrets.Json é prioritário caso exista.
+caso o Secrets.Json não for definido, o sistema irá levar em conta, o login e senha definido no grupo ACESSO de AppSettings.Json em
+substituição ao Secrets.Json, que será sempre prioritário caso o acesso seja definido em ambos.
 
 5) Ao levantar o sistema, na sessão SEGURANCA do Swagger, executar o método Post Gerar-Token, passando o Login e Senha defindos
 nas etapas anteriores. Um Token será gerado.
