@@ -6,6 +6,7 @@ namespace Kanban.Domain.Intefaces
 {
     public interface IRepositoryBase<TEntidade> : IDisposable where TEntidade : Entity
     {
+        void DetachAllEntities();
         IEnumerable<TEntidade> Listar();
         TEntidade ObterPorId(Guid id);
         void Adicionar(TEntidade obj);

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Kanban.Application\Kanban.Application.csproj" />
     <ProjectReference Include="..\Kanban.Infa.Data\Kanban.Infa.Data.csproj" />
   </ItemGroup>

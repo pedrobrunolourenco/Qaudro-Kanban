@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Kanban.Infa.Data.Contextos;
 using Microsoft.EntityFrameworkCore;
+using Kanban.Infra.CrossCutting.Filters;
 
 namespace Api_Quadro_Kanban
 {
@@ -27,7 +28,10 @@ namespace Api_Quadro_Kanban
             SwaggerStartup.ServicoSwagger(services);
             SwaggerStartup.ConfigureToken(services, Configuration);
 
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+               // options.Filters.Add(new FilterLogAlteracaoExclusao());
+            });
 
             services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), typeof(ViewModelToDomainMappingProfile));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
