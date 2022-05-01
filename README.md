@@ -24,22 +24,5 @@ nas etapas anteriores. Um Token será gerado.
 7) O restante dos métodos estão disponíveis na Sessão QUADRO do Swagger. Todos os métodos desta sessão exigem ser autenticados através
    do token. A Autenticação é feita pelo decorator Authorize.
 
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+8) OBS: Os dados são persistidos IN MENMORY, portanto, serão perdidos ao fim da session.
 
