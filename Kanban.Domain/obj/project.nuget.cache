@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Bjgg03vIQ8EYopXy3BakY0KqxIQepu+Aaa3pAywYSv4Usis+dkdU/prIUNEN+a6MOVI0gt+DnGCq8uC7Wf/XxA==",
+  "success": true,
+  "projectFilePath": "C:\\BACKEND\\Qaudro-Kanban\\Kanban.Domain\\Kanban.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ACT\\.nuget\\packages\\fluentvalidation\\8.4.0\\fluentvalidation.8.4.0.nupkg.sha512",
+    "C:\\Users\\ACT\\.nuget\\packages\\system.componentmodel.annotations\\4.4.1\\system.componentmodel.annotations.4.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Kanban.Infra.CrossCutting
+build_property.ProjectDir = C:\BACKEND\Qaudro-Kanban\Kanban.Infra.CrossCutting\

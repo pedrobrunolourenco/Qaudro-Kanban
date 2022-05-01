@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<RootNamespace>Api_Quadro_Kanban</RootNamespace>
+		<UserSecretsId>Arquivo-Secreto</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.0.0" />
+		<PackageReference Include="NSwag.AspNetCore" Version="13.3.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Kanban.Application\Kanban.Application.csproj" />
+	  <ProjectReference Include="..\Kanban.Domain\Kanban.Domain.csproj" />
+	  <ProjectReference Include="..\Kanban.Infa.Data\Kanban.Infa.Data.csproj" />
+	  <ProjectReference Include="..\Kanban.Infra.CrossCutting\Kanban.Infra.CrossCutting.csproj" />
+	</ItemGroup>
+
+
+</Project>

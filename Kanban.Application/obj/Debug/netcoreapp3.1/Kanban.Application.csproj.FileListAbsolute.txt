@@ -1,0 +1,13 @@
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\bin\Debug\netcoreapp3.1\Kanban.Application.deps.json
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\bin\Debug\netcoreapp3.1\Kanban.Application.dll
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\bin\Debug\netcoreapp3.1\Kanban.Application.pdb
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\bin\Debug\netcoreapp3.1\Kanban.Domain.dll
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\bin\Debug\netcoreapp3.1\Kanban.Domain.pdb
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\obj\Debug\netcoreapp3.1\Kanban.Application.csproj.AssemblyReference.cache
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\obj\Debug\netcoreapp3.1\Kanban.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\obj\Debug\netcoreapp3.1\Kanban.Application.AssemblyInfoInputs.cache
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\obj\Debug\netcoreapp3.1\Kanban.Application.AssemblyInfo.cs
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\obj\Debug\netcoreapp3.1\Kanban.Application.csproj.CoreCompileInputs.cache
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\obj\Debug\netcoreapp3.1\Kanban.Application.csproj.CopyComplete
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\obj\Debug\netcoreapp3.1\Kanban.Application.dll
+C:\BACKEND\Qaudro-Kanban\Kanban.Application\obj\Debug\netcoreapp3.1\Kanban.Application.pdb
