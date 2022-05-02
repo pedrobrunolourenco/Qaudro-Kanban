@@ -36,6 +36,7 @@ namespace Kanban.Domain.Services
         public Quadro AlterarQuadro(Quadro quadro)
         {
             if (!quadro.EhValido()) return quadro;
+            repo.DetachAllEntities();
             repo.Atualizar(quadro);
             repo.Salvar();
             return quadro;

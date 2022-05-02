@@ -24,7 +24,7 @@ namespace Api_Quadro_Kanban.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [Route("Gerar-Token")]
+        [Route("Login")]
         public IActionResult GeraToken(LoginDTO login)
         {
             var Login = _configuration.GetSection("Acesso").GetSection("login").Value;
@@ -38,7 +38,7 @@ namespace Api_Quadro_Kanban.Controllers
                     Token = token
                 }); 
             }
-            return Ok(new
+            return BadRequest(new
             {
                 Mensagem = "Login ou Senha inválidos!"
             });

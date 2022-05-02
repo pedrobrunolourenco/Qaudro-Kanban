@@ -21,7 +21,6 @@ namespace Api_Quadro_Kanban.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         [Route("Listar")]
         public IActionResult ObterQuadros()
         {
@@ -37,7 +36,6 @@ namespace Api_Quadro_Kanban.Controllers
 
         [HttpPost]
         [Route("Adicionar")]
-        [AllowAnonymous]
         public IActionResult AdicionarQuadro([FromBody] QuadroDTO model)
         {
             try
@@ -52,10 +50,15 @@ namespace Api_Quadro_Kanban.Controllers
 
         [HttpPut]
         [Route("Alterar")]
-        [AllowAnonymous]
-        [FilterLogAlteracaoExclusao("AlterarQuadro")]
+        [FilterLogAlteracaoExclusao("Alterar")]
         public IActionResult AlterarQuadro(Guid id, [FromBody] QuadroDTO model)
         {
+            var quadro = _appQuadro.ObterPorId(id);
+            if (quadro == null)
+            {
+                return NotFound();
+            }
+
             try
             {
                 model.Id = id;
@@ -63,23 +66,28 @@ namespace Api_Quadro_Kanban.Controllers
             }
             catch
             {
-                return NotFound($"{id} não encontrado");
+                return BadRequest();
             }
         }
 
         [HttpDelete]
         [Route("Remover")]
-        [FilterLogAlteracaoExclusao("RemoverQuadro")]
-        [AllowAnonymous]
+        [FilterLogAlteracaoExclusao("Remover")]
         public IActionResult ExcluirQuadro(Guid id)
         {
+            var quadro = _appQuadro.ObterPorId(id);
+            if(quadro == null)
+            {
+                return NotFound(); ;
+            }
+
             try
             {
                 return Ok(_appQuadro.ExcluirQuadro(id));
             }
             catch
             {
-                return NotFound($"{id} não encontrado");
+                return BadRequest();
             }
         }
 

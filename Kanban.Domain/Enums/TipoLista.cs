@@ -2,6 +2,7 @@
 {
     public enum TipoLista
     {
+        Novo,
         ToDo,
         Doing,
         Done

@@ -13,12 +13,17 @@ namespace Kanban.Infra.CrossCutting.Filters
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            Console.WriteLine($"Executado - {_name}");
+            if (_name == "Alterar" || _name == "Remover")
+            {
+                var id = context.HttpContext.Request.QueryString;
+                Console.WriteLine($"{DateTime.Now} - Id: {id} - {_name}");
+            }
+
         }
+
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            Console.WriteLine($"Executando - {_name}" );
         }
     }
 }

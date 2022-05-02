@@ -22,11 +22,7 @@ namespace Kanban.Infa.Data.Repository
 
         public void DetachAllEntities()
         {
-            var changedEntriesCopy = Db.ChangeTracker.Entries()
-                .Where(e => e.State == EntityState.Added ||
-                            e.State == EntityState.Modified ||
-                            e.State == EntityState.Deleted)
-                .ToList();
+            var changedEntriesCopy = Db.ChangeTracker.Entries().ToList();
 
             foreach (var entry in changedEntriesCopy)
                 entry.State = EntityState.Detached;
@@ -40,8 +36,7 @@ namespace Kanban.Infa.Data.Repository
 
         public TEntidade ObterPorId(Guid id)
         {
-            var retorno = DbSet.Find(id);
-            return retorno;
+            return DbSet.Find(id); ;
         }
 
         public void Adicionar(TEntidade obj)

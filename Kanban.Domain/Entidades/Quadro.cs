@@ -39,7 +39,6 @@ namespace Kanban.Domain.Entidades
                 .NotEqual(Guid.Empty)
                 .WithMessage("Id do quadro inválido");
 
-
             RuleFor(c => c.Titulo)
                 .NotEmpty()
                 .WithMessage("O título do quadro não foi informado");
@@ -62,12 +61,12 @@ namespace Kanban.Domain.Entidades
 
             RuleFor(c => c.Lista)
                 .Must(ValidaLista)
-                .WithMessage("Lista do quadro não aceitável");
+                .WithMessage("Lista do quadro não aceitável, informe uma das opções: Novo, ToDo, Doing ou Done");
         }
 
         protected static bool ValidaLista(string lista)
         {
-            return (lista == TipoLista.ToDo.ToString() || lista == TipoLista.Doing.ToString() || lista == TipoLista.Done.ToString()); ;
+            return (lista == TipoLista.Novo.ToString() || lista == TipoLista.ToDo.ToString() || lista == TipoLista.Doing.ToString() || lista == TipoLista.Done.ToString()); ;
         }
     }
 }
