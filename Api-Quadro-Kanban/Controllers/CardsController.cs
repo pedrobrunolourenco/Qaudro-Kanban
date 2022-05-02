@@ -12,10 +12,10 @@ namespace Api_Quadro_Kanban.Controllers
     [ApiVersion("1")]
     [Produces("application/json")]
     [Authorize()]
-    public class QuadroController : Controller
+    public class CardsController : Controller
     {
         private readonly IAppQuadro _appQuadro;
-        public QuadroController(IAppQuadro appQuadro)
+        public CardsController(IAppQuadro appQuadro)
         {
             _appQuadro = appQuadro;
         }
