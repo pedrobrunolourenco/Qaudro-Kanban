@@ -1,5 +1,6 @@
 ﻿using Kanban.Application.DTOs;
 using Kanban.Application.Interfaces;
+using Kanban.Infra.CrossCutting.Filters;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -20,43 +21,66 @@ namespace Api_Quadro_Kanban.Controllers
         }
 
         [HttpGet]
-        [Route("Obter-Quadros")]
+        [AllowAnonymous]
+        [Route("Listar")]
         public IActionResult ObterQuadros()
         {
-            return Ok( _appQuadro.ObterListaDeQuadros() );
+            try
+            {
+                return Ok(_appQuadro.ObterListaDeQuadros());
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPost]
-        [Route("Adicionar-Quadro")]
+        [Route("Adicionar")]
+        [AllowAnonymous]
         public IActionResult AdicionarQuadro([FromBody] QuadroDTO model)
         {
-            return Ok(_appQuadro.IncluirQuadro(model));
+            try
+            {
+                return Ok(_appQuadro.IncluirQuadro(model));
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPut]
-        [Route("Alterar-Quadro")]
+        [Route("Alterar")]
+        [AllowAnonymous]
+        [FilterLogAlteracaoExclusao("AlterarQuadro")]
         public IActionResult AlterarQuadro(Guid id, [FromBody] QuadroDTO model)
         {
-            var quadro = _appQuadro.ObterPorId(id);
-            if(quadro == null)
+            try
+            {
+                model.Id = id;
+                return Ok(_appQuadro.AlterarQuadro(model));
+            }
+            catch
             {
                 return NotFound($"{id} não encontrado");
             }
-
-            model.Id = id;
-            return Ok(_appQuadro.AlterarQuadro(model));
         }
 
         [HttpDelete]
-        [Route("Excluir-Quadro")]
+        [Route("Remover")]
+        [FilterLogAlteracaoExclusao("RemoverQuadro")]
+        [AllowAnonymous]
         public IActionResult ExcluirQuadro(Guid id)
         {
-            var quadro = _appQuadro.ObterPorId(id);
-            if (quadro == null)
+            try
+            {
+                return Ok(_appQuadro.ExcluirQuadro(id));
+            }
+            catch
             {
                 return NotFound($"{id} não encontrado");
             }
-            return Ok(_appQuadro.ExcluirQuadro(id));
         }
 
 
