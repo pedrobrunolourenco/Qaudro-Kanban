@@ -1,4 +1,4 @@
-# Qaudro-Kanban
+# Quadro-Kanban
  Desafio-LetsCode
 
 1) Definir como Set As Startup Project o projeto Api-Quadro-Kanban, disponibilizado na pasta lógica 1-API-REST.
